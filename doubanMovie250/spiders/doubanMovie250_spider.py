@@ -20,5 +20,5 @@ class DoubanMovie250Spider(scrapy.Spider):
             item['ranking'] = movie.xpath('.//div[@class="pic"]/em/text()').extract()[0]
             item['title'] = movie.xpath('.//div[@class="hd"]/a/span[1]/text()').extract()[0]
             item['score'] = movie.xpath('.//div[@class="star"]/span[@class="rating_num"]/text()').extract()[0]
-            item['quote'] = movie.xpath('.//p[@class="quote"]/span/text()').extract()[0]
+            item['quote'] = movie.xpath('.//p[@class="quote"]/span/text()').extract()
             yield item
